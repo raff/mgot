@@ -38,6 +38,8 @@ You can automate the full process by installing the associated scripts as follow
     launchctl load ~/Library/LaunchAgents/NewMessage.plist
 
 After that, every time you get a message matching the pattern, the `code` should be copied to the clipboard.
+
 You can verify if the process works by checking the log file /tmp/newmessage.log (usage may vary - this works for me
-on one of my MacBooks, running High Sierra, but not on the older one, running MacOS Sierra). If the automated process 
-doesn't work you can manually run `newmessage.sh` to copy the latest code to the clipboard.
+on one of my MacBooks, running High Sierra, but not on the older one, running MacOS Sierra).
+
+If the automated process doesn't work you can manually run `newmessage.sh` to copy the latest code to the clipboard.
