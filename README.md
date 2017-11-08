@@ -7,7 +7,7 @@ The main purpose of this command is to get the text of the last SMS sent and cop
 The script is pre-configured for Okta authentication, but should be adaptable to other forms of 2FA by passing 
 the appripriate parameters.
 
-## USAGE
+## Usage
 
       mgot [-db path] [-filter] [-pattern pattern] [-service service]
 
@@ -26,3 +26,18 @@ the appripriate parameters.
 - The pattern should be compatible with a SQL `LIKE` statement (i.e. `message LIKE "pattern"`)
 - The Messages services for SMS is "SMS"
 - filter=false will return the full message, filter=true will return the part matching '%' in pattern.
+
+## Install
+
+You can automate the full process by installing the associated scripts as following:
+
+    cp newmessage.sh /usr/local/bin/
+    chmod +x /usr/local/bin/newmessage.sh
+
+    cp NewMessage.plist ~/Library/LaunchAgents/
+    launchctl load ~/Library/LaunchAgents/NewMessage.plist
+
+After that, every time you get a message matching the pattern, the `code` should be copied to the clipboard.
+You can verify if the process works by checking the log file /tmp/newmessage.log (usage may vary - this works for me
+on one of my MacBooks, running High Sierra, but not on the older one, running MacOS Sierra). If the automated process 
+doesn't work you can manually run `newmessage.sh` to copy the latest code to the clipboard.
