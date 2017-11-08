@@ -15,7 +15,8 @@
 
     <key>WatchPaths</key>
       <array>
-	<string>~/Library/Messages/</string>
+	<string>~/Library/Messages/chat.db</string>
+	<string>~/Library/Messages/chat.db-wal</string>
       </array>
 </dict>
 </plist>
