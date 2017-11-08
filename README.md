@@ -4,8 +4,7 @@ Get last SMS message from MacOS Messages database
 The main purpose of this command is to get the text of the last SMS sent and copy it to the clipboard 
 (for example, to get the code sent for two-factor authentication and past it in the login form).
 
-The script is pre-configured for Okta authentication, but should be adaptable to other forms of 2FA by passing 
-the appripriate parameters.
+The script is pre-configured for Okta authentication (that sends a message like `Your verification code is XXXXX.`), but should be adaptable to other forms of 2FA by passing the appropriate -pattern parameter.
 
 ## Usage
 
