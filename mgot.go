@@ -13,6 +13,8 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
+var spaces = regexp.MustCompile("\\s+")
+
 func homepath(p string) string {
 	if strings.HasPrefix(p, "~/") {
 		// relative to home
@@ -49,6 +51,7 @@ func main() {
 
 	if *filter {
 		re := strings.Replace(*pattern, "%", "(.+)", -1)
+		re = spaces.ReplaceAllLiteralString(re, `\s+`)
 		match := regexp.MustCompile(re).FindStringSubmatch(text)
 		if len(match) > 1 {
 			text = strings.Join(match[1:], " ")
