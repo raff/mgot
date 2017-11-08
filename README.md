@@ -31,6 +31,9 @@ the appripriate parameters.
 
 You can automate the full process by installing the associated scripts as following:
 
+    go get -u github.com/raff/mgot
+    cp $GOPATH/bin/mgot /usr/local/bin
+    
     cp newmessage.sh /usr/local/bin/
     chmod +x /usr/local/bin/newmessage.sh
 
